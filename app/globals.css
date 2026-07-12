@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, SFMono-Regular, monospace;
+  --font-display: var(--font-archivo-black), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: #f4f4f0;
+    color: #111111;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .neo-box {
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px 0px #000;
+    background-color: #fff;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+  
+  .neo-box:hover {
+    box-shadow: 8px 8px 0px 0px #000;
+    transform: translate(-2px, -2px);
+  }
+  
+  .neo-box:active {
+    box-shadow: 0px 0px 0px 0px #000;
+    transform: translate(6px, 6px);
+  }
+
+  .neo-button {
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px 0px #000;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, background-color 0.2s;
+  }
+
+  .neo-button:active {
+    box-shadow: 0px 0px 0px 0px #000;
+    transform: translate(4px, 4px);
+  }
+  
+  .neo-button-secondary {
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px 0px #000;
+    background-color: #fce762;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  }
+
+  .neo-button-secondary:active {
+    box-shadow: 0px 0px 0px 0px #000;
+    transform: translate(4px, 4px);
+  }
+}
