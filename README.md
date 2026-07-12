@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SYUTA. | Premium Streetwear
 
-## Getting Started
+**Live Website:** [https://syuta.vercel.app/](https://syuta.vercel.app/)
 
-First, run the development server:
+A modern, high-performance e-commerce platform for premium streetwear, built with Next.js and MongoDB.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- **Dynamic E-Commerce Experience:** Fully responsive layout with neo-brutalism aesthetics.
+- **Authentication & Security:** JWT-based authentication with NextAuth.js. Secure email verification using Nodemailer and Gmail SMTP.
+- **Real-Time Shopping Cart:** Persistent global state using Zustand.
+- **Advanced Search & Filtering:** Instantly search products with MongoDB regex indexing. 
+- **Admin Dashboard:** Manage products, inventory, and incoming orders seamlessly.
+- **Secure Checkout:** Integrated payments processing with Razorpay.
+- **Rate Limiting:** Enterprise-grade API protection via Upstash Redis.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 15 (App Router), React 19, Tailwind CSS v4, Lucide React
+- **Backend:** Next.js Server Actions & API Routes, Node.js
+- **Database:** MongoDB (Mongoose)
+- **State Management:** Zustand
+- **Authentication:** NextAuth.js, bcryptjs
+- **Email:** Nodemailer (SMTP)
+- **Deployment:** Vercel
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- MongoDB connection string
+- Gmail account (for SMTP App Passwords)
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory and add your credentials:
+
+```env
+# MongoDB
+MONGODB_URI=your_mongodb_connection_string
+
+# NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
+
+# Email Verification (Gmail SMTP)
+EMAIL_USER=your_gmail@gmail.com
+EMAIL_APP_PASSWORD=your_16_char_app_password
+
+# Upstash Redis (Rate Limiting)
+UPSTASH_REDIS_REST_URL=your_upstash_url
+UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/simplyarav/Syuta.git
+   cd Syuta
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Seed the database (Optional)**
+   If you want to populate the store with sample products:
+   ```bash
+   node scripts/seed.js
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🎨 Design System
 
-## Deploy on Vercel
+The platform uses a distinctive neo-brutalist aesthetic:
+- **Colors:** Vibrant accents (`#fce762` yellow, `#ff3366` pink) against stark black and white.
+- **Typography:** Heavy, uppercase typography using `font-black` and extreme tracking (`tracking-tighter`).
+- **UI Components:** Sharp corners, thick borders (`border-[3px] border-black`), and solid black drop shadows (`shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📄 License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.

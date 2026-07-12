@@ -1,7 +1,9 @@
 import dbConnect from "@/lib/mongodb";
 import Product from "@/models/Product";
+import Category from "@/models/Category"; // Required for .populate('category')
 import { notFound } from "next/navigation";
 import AddToCartButton from "@/components/AddToCartButton";
+import BuyNowButton from "@/components/BuyNowButton";
 import { formatPrice } from "@/lib/utils";
 import PatternArt from "@/components/PatternArt";
 
@@ -51,9 +53,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                price: product.price,
                image: product.images?.[0] || ""
              }} />
-             <button className="neo-button-secondary w-full sm:w-auto px-12 py-5 text-2xl flex-1 text-center">
-               Buy Now
-             </button>
+             <BuyNowButton product={{
+               _id: product._id,
+               name: product.name,
+               price: product.price,
+               image: product.images?.[0] || ""
+             }} />
           </div>
         </div>
       </div>

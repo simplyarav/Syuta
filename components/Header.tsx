@@ -50,7 +50,7 @@ export default function Header() {
           >
             {searchOpen ? <X size={24} strokeWidth={2.5} /> : <Search size={24} strokeWidth={2.5} />}
           </button>
-          <Link href="/profile" className="p-2 border-2 border-transparent hover:border-black transition-colors rounded-none hidden sm:block">
+          <Link href="/profile" className="p-2 border-2 border-transparent hover:border-black transition-colors rounded-none">
             <User size={24} strokeWidth={2.5} />
           </Link>
           <button 
